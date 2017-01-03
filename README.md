@@ -6,7 +6,7 @@
 
 ## Installation
 
-Just copy and paste the `dir` function below in your profile or do somwthing like
+Just copy and paste the `dir` function below in your profile or do something like
 
 ```bash
 mkdir -p ~/.bash
