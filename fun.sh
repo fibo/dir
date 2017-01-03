@@ -1,3 +1,3 @@
 dir() {
-  mkdir -p $1 && cd $_
+	mkdir -p "$*" && cd "$_"
 }

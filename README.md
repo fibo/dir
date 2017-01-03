@@ -23,10 +23,16 @@ Simple as
 dir /path/to/my/folder
 ```
 
+Folder names with spaces are supported
+
+```bash
+dir ~/please dont/create folders/with spaces
+```
+
 ## Annotated source
 
     dir() {
-    	mkdir -p $1 && cd $_
+    	mkdir -p "$*" && cd "$_"
     }
 
 ## License
