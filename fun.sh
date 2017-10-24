@@ -6,6 +6,6 @@ dir() {
 	then
 		mkdir -p "$*" && cd "$_"
 	else
-		echo USAGE: dir foo/bar
+		echo $USAGE
 	fi
 }
