@@ -23,7 +23,14 @@ Simple as
 dir /path/to/my/folder
 ```
 
-Folder names with spaces are supported
+Folder `/path/to/my/folder` will be created and you will enter into it.
+You can use an absolute path like the example above or a relative path like
+
+```bash
+dir folder/i/want/to/create
+```
+
+Are folder names with spaces supported? **Yes!**
 
 ```bash
 dir ~/please dont/create folders/with spaces
@@ -31,8 +38,22 @@ dir ~/please dont/create folders/with spaces
 
 ## Annotated source
 
+Outout usage, when `-h` or `--help` are the first parameter and when no
+argument is provided. Then use mkdir to create given folder and change
+directory into it.
+
     dir() {
-    	mkdir -p "$*" && cd "$_"
+    	USAGE="USAGE: dir foo/bar"
+
+    	[ "$1" = "-h" ] && echo $USAGE && return
+    	[ "$1" = "--help" ] && echo $USAGE && return
+
+    	if [ $# -gt 0 ]
+    	then
+    		mkdir -p "$*" && cd "$_"
+    	else
+    		echo USAGE: dir foo/bar
+    	fi
     }
 
 ## License
