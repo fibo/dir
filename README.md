@@ -7,19 +7,20 @@
 [Annotated source](#annotated-source) |
 [License](#license)
 
-[![KLP](https://img.shields.io/badge/kiss-literate-orange.svg)](http://g14n.info/kiss-literate-programming)
-
-<img src="https://rawgit.com/fibo/os-icons8/master/Apple-50.png" width="50" height="50" /> <img src="https://rawgit.com/fibo/os-icons8/master/Linux-50.png" width="50" height="50" />
+[![KLP](https://img.shields.io/badge/kiss-literate-orange.svg)](https://fibo.github.io/kiss-literate-programming)
 
 ## Installation
 
-Just copy and paste the `dir` function below in your profile or do something like
+Both *zsh* and *bash* shell are supported.
 
-```bash
-mkdir -p ~/.bash
-cd ~/.bash
-git clone git://github.com/fibo/dir.git
-echo "source ~/.bash/dir/fun.sh" >> ~/.bashrc
+Just copy and paste the `dir` function below in your shell profile or do something like
+
+```sh
+mkdir -p ~/.shell
+cd ~/.shell
+git clone https://github.com/fibo/dir.git
+# Assuming you are using zsh
+echo "source ~/.shell/dir/fun.sh" >> ~/.zshrc
 ```
 
 ## Usage
@@ -40,14 +41,15 @@ dir folder/i/want/to/create
 Are folder names with spaces supported? **Yes!**
 
 ```bash
-dir ~/please dont/create folders/with spaces
+dir ~/you can/create folders/with spaces
 ```
 
 ## Annotated source
 
-Outout usage, when `-h` or `--help` are the first parameter and when no
-argument is provided. Then use mkdir to create given folder and change
-directory into it.
+If `-h` or `--help` is the first parameter or no argument is provided, then output *USAGE*.
+
+Use `mkdir` to create given folder and *change directory* into it.
+
 
     dir() {
     	USAGE="USAGE: dir foo/bar"
@@ -65,6 +67,5 @@ directory into it.
 
 ## License
 
-[MIT](http://g14n.info/mit-license)
+[MIT](https://fibo.github.io/mit-license)
 
-<sub>OS icons provided by <a href="https://icons8.com/">icons8</a>.</sub>
