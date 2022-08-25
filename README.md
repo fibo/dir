@@ -22,6 +22,15 @@ git clone https://github.com/fibo/dir.git
 echo "source ~/.shell/dir/fun.sh" >> ~/.zshrc
 ```
 
+With the setup above, to update run the following
+
+```sh
+cd ~/.shell/dir
+git pull origin main
+source ~/.zshrc
+cd -
+```
+
 ## Usage
 
 Simple as
