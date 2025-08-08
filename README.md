@@ -52,24 +52,43 @@ Are folder names with spaces supported? **Yes!**
 dir ~/you can/create folders/with spaces
 ```
 
+If no argument is provided, it will create a temporary folder.
+
+```sh
+dir
+```
+
 ## Annotated source
 
 If `-h` or `--help` is the first parameter or no argument is provided, then output *USAGE*.
 
-Use `mkdir` to create given folder and *change directory* into it.
-
 
     dir() {
-    	USAGE="USAGE: dir foo/bar"
+    	USAGE=`cat <<EOF
+    +---------------------------------------------------------+
+    | Create a folder and enter into it.                      |
+    |                                                         |
+    |    dir foo/bar                                          |
+    |                                                         |
+    | If no path is given, a temporary folder will be created.|
+    |                                                         |
+    | https://github.com/fibo/dir                             |
+    +---------------------------------------------------------+
+    EOF`
 
     	[ "$1" = "-h" ] && echo $USAGE && return
     	[ "$1" = "--help" ] && echo $USAGE && return
+
+Use `mkdir` to create given folder and *change directory* into it.
 
     	if [ $# -gt 0 ]
     	then
     		mkdir -p "$*" && cd "$_"
     	else
-    		echo $USAGE
+
+If no argument is provided, use `mktemp` to create a temporary folder and *change directory* into it.
+
+    		cd `mktemp -d`
     	fi
     }
 
