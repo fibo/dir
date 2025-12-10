@@ -7,7 +7,7 @@
 [Annotated source](#annotated-source) |
 [License](#license)
 
-[![KLP](https://fibo.github.io/svg/klp-badge.svg)](https://fibo.github.io/kiss-literate-programming)
+[![KLP](https://fibo.github.io/svg/badges/klp.svg)](https://fibo.github.io/kiss-literate-programming)
 
 ## Installation
 
