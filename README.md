@@ -60,8 +60,7 @@ dir
 
 ## Annotated source
 
-If `-h` or `--help` is the first parameter or no argument is provided, then output *USAGE*.
-
+If `-h` or `--help` is the first parameter, then output *USAGE*.
 
     dir() {
     	USAGE=`cat <<EOF
@@ -79,14 +78,14 @@ If `-h` or `--help` is the first parameter or no argument is provided, then outp
     	[ "$1" = "-h" ] && echo $USAGE && return
     	[ "$1" = "--help" ] && echo $USAGE && return
 
-Use `mkdir` to create given folder and *change directory* into it.
+Create folder given as _argument_ and change _current directory_.
 
     	if [ $# -gt 0 ]
     	then
     		mkdir -p "$*" && cd "$_"
     	else
 
-If no argument is provided, use `mktemp` to create a temporary folder and *change directory* into it.
+If no argument is provided create a _temporary folder_ and enter into it.
 
     		cd `mktemp -d`
     	fi
